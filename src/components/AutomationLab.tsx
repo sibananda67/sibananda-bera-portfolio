@@ -101,7 +101,7 @@ export const AutomationLab: React.FC = () => {
   };
 
   return (
-    <section id="automation" className="py-24 bg-[#07090f] relative overflow-hidden">
+    <section id="automation-lab" className="py-24 bg-[#07090f] relative overflow-hidden border-t border-white/5">
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-600/5 rounded-full blur-3xl pointer-events-none -z-10" />
 

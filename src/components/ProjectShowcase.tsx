@@ -28,16 +28,16 @@ export const ProjectShowcase: React.FC = () => {
   const activeProject = PROJECTS_DATA.find((p) => p.id === selectedProjectId) || PROJECTS_DATA[0];
 
   return (
-    <section id="work" className="py-24 bg-[#090c14] relative border-t border-white/5">
+    <section id="projects" className="py-24 bg-[#090c14] relative border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <div className="max-w-3xl mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono mb-3">
-            <span>PORTFOLIO SHOWCASE</span>
+            <span>DEMONSTRATED SYSTEMS</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight">
-            Things I’ve Built, Managed & Automated
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white tracking-tight">
+            Production Projects & Systems
           </h2>
           <p className="text-slate-400 text-sm sm:text-base mt-3 leading-relaxed">
             Real systems addressing tangible operational problems—connecting seller networks, customer checkouts, logistics APIs, and automated outreach engines.

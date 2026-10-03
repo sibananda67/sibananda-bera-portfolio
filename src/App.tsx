@@ -2,19 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
-import { AskPortfolioSearch } from './components/AskPortfolioSearch';
-import { Introduction } from './components/Introduction';
-import { SkillUniverse } from './components/SkillUniverse';
-import { AIProjectRecommender } from './components/AIProjectRecommender';
+import { ServicesSection } from './components/ServicesSection';
+import { SolutionsSection } from './components/SolutionsSection';
 import { ProjectShowcase } from './components/ProjectShowcase';
 import { AutomationLab } from './components/AutomationLab';
 import { ProblemToSystem } from './components/ProblemToSystem';
-import { AIBusinessConsultant } from './components/AIBusinessConsultant';
 import { SystemMap } from './components/SystemMap';
-import { AISystemVisualizer } from './components/AISystemVisualizer';
 import { CaseStudy } from './components/CaseStudy';
-import { Timeline } from './components/Timeline';
-import { AIResumeAssistant } from './components/AIResumeAssistant';
+import { PricingSection } from './components/PricingSection';
 import { AboutMe } from './components/AboutMe';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
@@ -26,6 +21,8 @@ import { NotFoundPage } from './components/NotFoundPage';
 export default function App() {
   const [resumeOpen, setResumeOpen] = useState(false);
   const [isNotFound, setIsNotFound] = useState(false);
+  const [selectedServiceForBrief, setSelectedServiceForBrief] = useState<string | undefined>(undefined);
+  const [selectedTierForBrief, setSelectedTierForBrief] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     const checkRoute = () => {
@@ -72,30 +69,49 @@ export default function App() {
         {/* Sticky Header Navigation */}
         <Navigation onOpenResume={() => setResumeOpen(true)} />
 
-        {/* Main Sections Content */}
+        {/* Main Information Architecture */}
         <main id="main-content" className="relative z-10">
+          {/* 1. Hero (#hero) */}
           <Hero />
-          <AskPortfolioSearch />
-          <Introduction />
-          <SkillUniverse />
-          <AIProjectRecommender />
-          <ProjectShowcase />
-          <AutomationLab />
+
+          {/* 2. Services (#services) - WHAT WE BUILD */}
+          <ServicesSection onSelectService={(srv) => setSelectedServiceForBrief(srv)} />
+
+          {/* 3. Solutions (#solutions) - By Industry & Scale */}
+          <SolutionsSection />
+
+          {/* 4. Interactive Problem to System Architecture Mapper */}
           <ProblemToSystem />
-          <AIBusinessConsultant />
-          <SystemMap />
-          <AISystemVisualizer />
+
+          {/* 5. Projects (#projects) - Real Production Systems */}
+          <ProjectShowcase />
+
+          {/* 6. Case Study: IngrediaMart Transformation */}
           <CaseStudy />
-          <Timeline />
-          <AIResumeAssistant onOpenFullResume={() => setResumeOpen(true)} />
+
+          {/* 7. Automation Lab (#automation-lab) - Live Interactive Simulator */}
+          <AutomationLab />
+
+          {/* 8. Interactive System Architecture Topology */}
+          <SystemMap />
+
+          {/* 9. Pricing (#pricing) - Engagement Models */}
+          <PricingSection onSelectTier={(tier) => setSelectedTierForBrief(tier)} />
+
+          {/* 10. About (#about) - Scalvtek Practice & Sibananda Bera */}
           <AboutMe />
-          <ContactSection />
+
+          {/* 11. Contact (#contact) - Interactive Project Brief Builder */}
+          <ContactSection 
+            initialService={selectedServiceForBrief} 
+            initialTier={selectedTierForBrief} 
+          />
         </main>
 
         {/* Footer */}
         <Footer />
 
-        {/* Floating AI Assistant (SB AI) */}
+        {/* Floating AI Copilot (Scalvtek AI) */}
         <AIPortfolioAssistant />
 
         {/* Minimalist Structured Resume Modal */}

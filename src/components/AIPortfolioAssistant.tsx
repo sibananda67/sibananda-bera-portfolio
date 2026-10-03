@@ -24,14 +24,13 @@ interface ChatMessage {
 }
 
 const QUICK_QUESTIONS = [
-  "🚀 What does Sibananda do?",
-  "🤖 What automation projects has he worked on?",
+  "⚡ What does Scalvtek build?",
   "🛒 Tell me about IngrediaMart",
-  "🔗 What integrations has he worked with?",
-  "⚙️ What can he automate?",
-  "💼 What are his technical skills?",
-  "📄 Show me his experience",
-  "📬 How can I contact him?"
+  "🤖 What can you automate with n8n?",
+  "📊 Tell me about CRM & telecaller setups",
+  "💼 What are the engagement models & pricing?",
+  "🔗 What third-party APIs have you integrated?",
+  "🚀 How do I start a project with Sibananda?"
 ];
 
 export const AIPortfolioAssistant: React.FC = () => {
@@ -41,7 +40,7 @@ export const AIPortfolioAssistant: React.FC = () => {
     {
       id: 'welcome-1',
       sender: 'bot',
-      text: "Hey 👋 I’m SB AI.\n\nWant to know what Sibananda has built?",
+      text: "Hey 👋 I’m Scalvtek AI.\n\nAsk me about our digital systems, e-commerce platforms, n8n automations, CRM setups, or how to start a project with Sibananda.",
       timestamp: 'Just now'
     }
   ]);
